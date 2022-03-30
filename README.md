@@ -15,3 +15,6 @@ bash run.sh
 4) 更新脚本
 ```
 安装完成之后输入 **`hniu`** 可快捷进入管理
+
+## 请求支持
+QQ群: 707175908 [[link](https://jq.qq.com/?_wv=1027&k=qeqLaXhG)]
