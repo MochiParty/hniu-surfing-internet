@@ -16,5 +16,5 @@ bash run.sh
 ```
 安装完成之后输入 **`hniu`** 可快捷进入管理
 
-## 请求支持
+## 交流群
 QQ群: HNIUer | 707175908 [[link](https://jq.qq.com/?_wv=1027&k=qeqLaXhG)]
