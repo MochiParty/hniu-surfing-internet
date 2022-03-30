@@ -6,8 +6,8 @@ read -p "请选择运营商
 " isp
 
 case $isp in
-	1 ) isp="移动";;
-	2 ) isp="电信";;
+	1 ) isp="@cmcc";;
+	2 ) isp="@telecom";;
 	3 ) isp="@union";;
 	*) isp="";;
 esac
