@@ -1,32 +1,32 @@
 BASE_PATH=$(cd `dirname $0`;pwd)
 
 setting(){
-read -p "ÇëÑ¡ÔñÔËÓªÉÌ 
-0. Ð£Ô°Íø 1. ÒÆ¶¯ 2. µçÐÅ 3. ÁªÍ¨ 
+read -p "è¯·é€‰æ‹©è¿è¥å•† 
+0. æ ¡å›­ç½‘ 1. ç§»åŠ¨ 2. ç”µä¿¡ 3. è”é€š 
 " isp
 
 case $isp in
-	1 ) isp="ÒÆ¶¯";;
-	2 ) isp="µçÐÅ";;
+	1 ) isp="ç§»åŠ¨";;
+	2 ) isp="ç”µä¿¡";;
 	3 ) isp="@union";;
 	*) isp="";;
 esac
 
-read -p "ÇëÊäÈëÕËºÅ: " user
-read -p "ÇëÊäÈëÃÜÂë: " password
+read -p "è¯·è¾“å…¥è´¦å·: " user
+read -p "è¯·è¾“å…¥å¯†ç : " password
 
-# ¸²¸ÇÔ­ÕËºÅ ÃÜÂë
+# è¦†ç›–åŽŸè´¦å· å¯†ç 
 sed -i "4c user=\"$user$isp\"" "$BASE_PATH/login.sh"
 sed -i "5c pwd=\"$password\"" "$BASE_PATH/login.sh"
-echo "ÐÞ¸ÄÓÃ»§³É¹¦
-ÕËºÅ: $user$isp
-ÃÜÂë: $password"
+echo "ä¿®æ”¹ç”¨æˆ·æˆåŠŸ
+è´¦å·: $user$isp
+å¯†ç : $password"
 }
 
 addCrontab(){
 crontab="/etc/crontabs/root"
 echo "*/5 * * * * cd $BASE_PATH && ./login.sh" >> $crontab
-echo "Ìí¼Ó¶¨Ê±ÈÎÎñ³É¹¦,ÖØÆô¶¨Ê±ÈÎÎñ"
+echo "æ·»åŠ å®šæ—¶ä»»åŠ¡æˆåŠŸ,é‡å¯å®šæ—¶ä»»åŠ¡"
 /etc/init.d/cron restart
 crontab -l
 }
@@ -37,16 +37,16 @@ curl -LJO "https://cdn.jsdelivr.net/gh/Ayouuuu/hniu-surfing-internet@main/logout
 }
 
 update(){
-echo "ÕýÔÚ¸üÐÂÈí¼þ..."
+echo "æ­£åœ¨æ›´æ–°è½¯ä»¶..."
 opkg update
-echo "¸üÐÂÈí¼þ³É¹¦£¡ÕýÔÚ°²×°Ïà¹ØÒÀÀµ"
+echo "æ›´æ–°è½¯ä»¶æˆåŠŸï¼æ­£åœ¨å®‰è£…ç›¸å…³ä¾èµ–"
 opkg install curl cronie
-echo "ÒÀÀµ°²×°³É¹¦,ÏÂÔØÖ÷³ÌÐòÖÐ"
+echo "ä¾èµ–å®‰è£…æˆåŠŸ,ä¸‹è½½ä¸»ç¨‹åºä¸­"
 downloadScript
-echo "Ö÷³ÌÐòÏÂÔØ³É¹¦!"
+echo "ä¸»ç¨‹åºä¸‹è½½æˆåŠŸ!"
 echo "alias hniu='bash "$BASE_PATH/run.sh"'" >> ~/.bashrc
-source "~/.bashrc"
-echo "Ìí¼Ó»·¾³±äÁ¿³É¹¦! ÊäÈë hniu ¿É¿ì½Ý´ò¿ª²Ëµ¥"
+source ~/.bashrc
+echo "æ·»åŠ çŽ¯å¢ƒå˜é‡æˆåŠŸ! è¾“å…¥ hniu å¯å¿«æ·æ‰“å¼€èœå•"
 }
 
 login(){
@@ -58,12 +58,12 @@ bash "$BASE_PATH/logout.sh"
 }
 
 run(){
-read -p "ÇëÑ¡Ôñ°²×°Ä£Ê½
-0) Ä¬ÈÏ: ³õÊ¼»¯
-1) ÉèÖÃÕË»§ÐÅÏ¢
-2£©µÇÂ½
-3) µÇ³ö
-4) ¸üÐÂ½Å±¾
+read -p "è¯·é€‰æ‹©å®‰è£…æ¨¡å¼
+0) é»˜è®¤: åˆå§‹åŒ–
+1) è®¾ç½®è´¦æˆ·ä¿¡æ¯
+2ï¼‰ç™»é™†
+3) ç™»å‡º
+4) æ›´æ–°è„šæœ¬
 " mode
 case $mode in
 	4 )
