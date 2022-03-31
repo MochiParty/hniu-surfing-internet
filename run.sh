@@ -25,7 +25,7 @@ echo "修改用户成功
 
 addCrontab(){
 crontab="/etc/crontabs/root"
-echo "*/5 * * * * cd $BASE_PATH && ./login.sh" >> $crontab
+echo "*/5 * * * * cd $BASE_PATH && bash ./login.sh" >> $crontab
 echo "添加定时任务成功,重启定时任务"
 /etc/init.d/cron restart
 crontab -l
