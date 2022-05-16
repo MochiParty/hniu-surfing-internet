@@ -20,7 +20,7 @@ bash run.sh
 ```text
 校园网: 直接就是用户名,不需要后缀
 电信: 123456@cmcc
-联通: 123456@union
+联通: 123456@unicom
 电信: 123456@telecom
 ```
 
