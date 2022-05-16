@@ -14,11 +14,11 @@ if [[ "$checkCode" != "200" ]]; then
     code
     checkCode=$(echo $?)
 	if [[ "$checkCode" != "200" ]]; then
-		msg="$datetime Successfully login,code: $code title: $title"
+		msg="$datetime Successfully login,code: $checkCode"
 		echo $msg
 		echo $msg >> "$BASE_PATH/log.log"
 	else 
-		msg="$datetime can't login plz check your user and pwd,title: $title"
+		msg="$datetime can't login plz check your user and pwd"
 		echo $msg
 		echo $msg >> "$BASE_PATH/log.log"
 	fi
