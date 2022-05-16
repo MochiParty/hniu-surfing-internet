@@ -1,0 +1,40 @@
+# !/bin/bash
+
+
+account(){
+	acc=$(shuf -n1 ~/dev/py/accounts.txt) 
+	user=$(echo $acc | cut -d ' ' -f1)
+	pwd=$(echo $acc | cut -d ' ' -f2)
+	# 账号 密码
+}
+
+code(){
+	return `curl -o /dev/null -s -w %{http_code} http://baidu.com` 
+}
+code
+checkCode=$(echo $?)
+
+if [[ "$checkCode" == "200" ]]; then
+	echo 'already login...'
+fi
+
+
+while (($checkCode != "200"))
+do
+	account
+	echo $user', '$pwd
+	if [[ "$checkCode" != "200" ]]; then
+		content=`curl -m 10 -s -w "Code: %{http_code}\n" -d "DDDDD=$user&upass=$pwd&0MKKey=123456" http://10.253.0.1/a70.html`;
+		code
+		checkCode=$(echo $?)
+		echo $checkCode
+		if [[ "$checkCode" == "200" ]]; then
+			msg="$datetime Successfully login,code: $checkCode"
+			echo $msg
+		else 
+			msg="$datetime can't login plz check your user and pwd,title: $title"
+			echo $msg
+		fi
+	else echo 'already login...'
+	fi
+done
