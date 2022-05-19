@@ -20,7 +20,7 @@ bash run.sh
 ```shell
 git clone https://github.com/MochiParty/hniu-surfing-internet.git
 ```
-然后根据自己的实际情况去选择相应的脚本
+然后根据自己的实际情况去选择相应的脚本,支持多账户的脚本需要配置 `accounts.txt` 帐号和密码
 |脚本名|介绍|多账户|
 |:---|:---|:---:|
 |hniu-wifi-login|只会对名称为 HNIU 的 Wifi 进行登陆验证|✔
