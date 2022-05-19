@@ -1,8 +1,9 @@
 # !/bin/bash
 
 account(){
-        user=''
-        pwd=''
+        acc=$(shuf -n1 accounts.txt) 
+        user=$(echo $acc | cut -d ' ' -f1)
+        pwd=$(echo $acc | cut -d ' ' -f2)
         # 账号 密码
 }
 
