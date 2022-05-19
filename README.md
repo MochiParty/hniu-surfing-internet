@@ -15,6 +15,18 @@ bash run.sh
 4) 更新脚本
 ```
 安装完成之后输入 `hniu` 可快捷进入管理,快捷管理无法使用，可以输入 `base run.sh` 进行管理
+
+### 进阶
+```shell
+git clone https://github.com/MochiParty/hniu-surfing-internet.git
+```
+然后根据自己的实际情况去选择相应的脚本
+|脚本名|介绍|多账户|
+|:---|:---|:---:|
+|hniu-wifi-login|只会对名称为 HNIU 的 Wifi 进行登陆验证|✔
+|openwrt-autologin|适用于 OpenWrt 固件的脚本(并不|✔
+|login.sh|普普通通的登陆脚本(鶸爆了|✖
+
 ## 注意事项
 账户由 **用户名**+**运行商** 组成
 ```text
