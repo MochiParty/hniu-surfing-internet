@@ -19,7 +19,18 @@ bash run.sh
 
 ## 使用技巧
 Linux 可以采用 Crontab 设置定时任务进行自动重连  
-Windows 系统可以使用自带的创建任务进行联网检查,只需要写一个 .bat 脚本运行即可,运行路径要填绝对路径
+Windows 系统可以使用自带的创建任务进行联网检查,只需要写一个 .bat 脚本使用 vbs 后台运行即可,运行路径要填绝对路径  
+login.bat 文件
+```bash
+E:
+py E:\login-hniu-net.py
+```
+login.vbs 文件
+```text
+Set ws = CreateObject("Wscript.Shell")
+ws.run "cmd /c login.bat",0
+```
+
 
 ### 进阶
 ```shell
